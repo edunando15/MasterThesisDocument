@@ -1,0 +1,412 @@
+% MSc BIS Thesis 
+% LaTeX Template
+% Version 1.0 (29/08/2014)
+%
+% Original authors:
+% Steven Gunn 
+% Sunil Patel
+%
+% Further authors:
+% Michael Stauffer
+% 
+% This template is based on
+% http://www.latextemplates.com/template/masters-doctoral-thesis
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% For digital publication it is recommended to use a one-sided layout
+\documentclass[11pt, oneside]{Thesis}
+\addbibresource{Bibliography.bib}
+
+% For printing it is recommended to use a two-sided layout
+%\documentclass[11pt, twoside]{Thesis}
+
+\makeglossaries
+
+\setlength{\epigraphwidth}{.7\textwidth}
+\renewcommand{\epigraphflush}{flushright}
+\makeatletter
+% Taken and updated from http://mirrors.ctan.org/macros/latex/contrib/epigraph/epigraph.dtx
+\renewcommand{\@epitext}[1]{%
+  \begin{minipage}{\epigraphwidth}\begin{\textflush} \hspace*{0pt}#1\\
+    \ifdim\epigraphrule>\z@ \@epirule \else \vspace*{-.5\baselineskip} \fi
+  \end{\textflush}\end{minipage}}
+\makeatother
+
+
+% SPARQL lst sintax
+\lstset{breaklines=true}
+\definecolor{LightGray}{rgb}{0.97,0.97,0.97}
+\lstdefinelanguage{SPARQL}{
+  basicstyle=\footnotesize\ttfamily,
+  backgroundcolor=\color{LightGray},
+  columns=fullflexible,
+  breaklines=true,
+  sensitive=true,
+  % --------------------------
+  frame=bt,
+  aboveskip=1em,
+  belowskip=1em,
+  xleftmargin=.5em,
+  xrightmargin=.5em,
+  framexleftmargin=.5em,
+  framextopmargin=.5em,
+  framexbottommargin=.5em,
+  framexrightmargin=.5em,
+  % --------------------------
+  tabsize = 2,
+  showstringspaces=false,
+  morecomment=[l][\color{gray}]{\#},       % comments
+  morecomment=[n][\color{blue}]{<http}{>}, % uris
+  morestring=[b][\color{OliveGreen}]{\"},  % strings
+  % -------------------------- variables
+  keywordsprefix=?,
+  classoffset=0,
+  keywordstyle=\color{Sepia},
+  morekeywords={},
+  % -------------------------- prefixes
+  classoffset=1,
+  keywordstyle=\color{Purple},
+  morekeywords={rdf,rdfs,owl,xsd,purl, eurio},
+  % -------------------------- keywords
+  classoffset=2,
+  keywordstyle=\color{MidnightBlue},
+  morekeywords={
+    SELECT,CONSTRUCT,DESCRIBE,ASK,WHERE,FROM,NAMED,PREFIX,BASE,OPTIONAL,
+    FILTER,GRAPH,LIMIT,OFFSET,SERVICE,UNION,EXISTS,NOT,BINDINGS,MINUS,a
+  }
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT VARIABLES
+%	Fill in the lines below to update the thesis template
+%	
+%   If you want to cite each of the variables defined below, look at the
+%	section above for the citation command.
+%----------------------------------------------------------------------------------------
+
+% You thesis title
+% Citation command \thesisTitle
+\thesisTitle{Title to be defined}
+%-------------------------------------------------  
+
+% You supervisor's name Unicam or FHNW
+% Citation command \supName 
+\supervisor{Emanuele Laurenzi}
+%-------------------------------------------------  
+
+% You supervisor's URL 
+% Citation command \supURL
+\supervisorURL{https://www.fhnw.ch/en/people/emanuele-laurenzi}
+%-------------------------------------------------
+
+% You supervisor's name Unicam or FHNW
+% Citation command \supName 
+\supervisorTwo{Massimo Callisto De Donato}
+
+%-------------------------------------------------  
+
+% You supervisor's URL
+% Citation command \supURL
+\supervisorTwoURL{https://computerscience.unicam.it/massimo-callisto-de-donato}
+%-------------------------------------------------
+
+
+% If you don't have a co-supervisor, exchange with
+%\cosupervisorfalse
+\cosupervisortrue
+%-------------------------------------------------
+
+% You co-supervisor's name 
+% Citation command \supcoName 
+\cosupervisor{Piermichele Rosati}
+%-------------------------------------------------  
+
+% You co-supervisor's URL
+% Citation command \supcoURL
+\cosupervisorURL{https://www.linkedin.com/in/piermichele-rosati/}
+%-------------------------------------------------
+
+% Your degree name
+% Citation command \degreeName
+\degree{Business Information Systems}
+\degreeTwo{Computer Science}
+%-------------------------------------------------   
+
+% Your name
+% Citation command \authorName
+\authors{Eduardo Tiano}
+\matricola{129508 / 25-657-446}%
+\academicyear{2025/2026}%
+%-------------------------------------------------
+
+% Your URL
+% Citation command \authorURL
+%\authorsURL{http://www.johnsmith.com}
+%-------------------------------------------------
+
+% Your address (not used)
+% Citation command \addressNames
+\addresses{}
+%-------------------------------------------------
+
+% Your subject area (not used) 
+% Citation command \subjectName
+\subject{}
+%-------------------------------------------------   
+
+% Keywords for your thesis (not used)
+% Citation command \keywordNames 
+\keywords{}
+%-------------------------------------------------
+
+% http://www.fhnw.ch
+% Citation command \fhnwURL 
+%-------------------------------------------------
+
+% University of Applied Sciences and Arts Northwestern Switzerland
+% Citation command \fhnw 
+%-------------------------------------------------
+
+% UNIVERSITY OF APPLIED SCIENCES AND ARTS NORTHWESTERN SWITZERLAND
+% Citation command \FHNW 
+%-------------------------------------------------
+
+% http://www.fhnw.ch/business
+% Citation command \hswURL 
+%-------------------------------------------------
+
+% School of Business
+% Citation command \hsw 
+%-------------------------------------------------
+
+% SCHOOL OF BUSINESS
+% Citation command \HSW 
+%-------------------------------------------------
+
+% http://www.fhnw.ch/business/iwi
+% Citation command \iwiURL 
+%-------------------------------------------------
+
+% Institute for Information Systems
+% Citation command \iwi 
+%-------------------------------------------------
+
+% INSTITUTE FOR INFORMATION SYSTEMS for Information Systems
+% Citation command \IWI
+%-------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	GLOSSARY
+%	Add your glossary terms below
+%	
+%   If you want to cite a glossary term simply use \gls{term) for the singular form 
+%   of the term or \glspl{term} for the plural form of the term.
+%----------------------------------------------------------------------------------------
+
+\newglossaryentry{Java}{
+    name={Java},
+    description={\blindtext}
+}
+
+\newglossaryentry{Oracle}{
+    name={Oracle},
+    description={\blindtext}
+}
+
+\newglossaryentry{Microsoft}{
+    name={Microsoft},
+    description={\blindtext}
+}
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%	Add your glossary terms below
+%	
+%   To generate the list of abbreviations run the following command in the terminal:
+%   makeglossaries Rosati-2024-Thesis 
+%
+%   If you want to cite an abbreviation term simply use \gls{term) for the singular form  
+%   of the term or \glspl{term} for the plural form of the term.
+%----------------------------------------------------------------------------------------
+
+\newacronym{srq}{SRQ}{Sub Research Question}
+\newacronym{kg}{KG}{Knowledge Graph}
+\newacronym{ai}{AI}{Artifical Intelligence}
+\newacronym{llm}{LLM}{Large Language Model}
+\newacronym{dnn}{DNN}{Deep Neural Network}
+\newacronym{gnn}{GNN}{Graph Neural Network}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dl}{DL}{Deep Learning}
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{rnn}{RNN}{Recurrent Neural Network}
+\newacronym{rdf}{RDF}{Resource Description Framework}
+\newacronym{rdfs}{RDFS}{RDF Schema}
+\newacronym{uri}{URI}{Uniform Resource Identifier}
+\newacronym{owl}{OWL}{Web Ontology Language}
+\newacronym{sparql}{SPARQL}{SPARQL Protocol and RDF Query Language}
+\newacronym{nlp}{NLP}{Natural Language Processing}
+\newacronym{lod}{LOD}{Linked Open Data}
+\newacronym{kge}{KGE}{Knowledge Graph Embedding}
+\newacronym{gcn}{GCN}{Graph Convolutional Network}
+\newacronym{gat}{GAT}{Graph Attention Network}
+\newacronym{mpnn}{MPNN}{Message Passing Neural Network}
+\newacronym{graphsage}{GraphSAGE}{Graph Sample and Aggregation}
+\newacronym{stgnn}{STGNN}{Spatio-Temporal Graph Neural Network}
+\newacronym{tgn}{TGN}{Temporal Graph Networks}
+\newacronym{lstm}{LSTM}{Long Short-Term Memory}
+\newacronym{gru}{GRU}{Gated Recurrent Unit}
+\newacronym{grnn}{GRNN}{Graph Recurrent Neural Network}
+\newacronym{gae}{GAE}{Graph Autoencoder}
+\newacronym{rgcn}{R-GCN}{Relational Graph Convolutional Network}
+\newacronym{hran}{HRAN}{Heterogeneous Relation Attention Network}
+\newacronym{mugnn}{MuGNN}{Multi-channel Graph Neural Network}
+\newacronym{trar}{TRAR}{Target Relational Attention-Oriented Reasoning}
+\newacronym{dpmpn}{DPMPN}{Dynamic Pruned Message Passing Networks}
+\newacronym{hgcn}{H-GCN}{Hierarchical Graph Convolutional Network}
+\newacronym{hdgi}{HDGI}{Heterogeneous Deep Graph Infomax}
+\newacronym{han}{HAN}{Heterogeneous Graph Attention Networks}
+\newacronym{cv}{CV}{Computer Vision}
+\newacronym{w3c}{W3C}{World Wide Web Consortium}
+\newacronym{mag}{MAG}{Microsoft Academic Graph}
+\newacronym{s2ag}{S2AG}{Semantic Scholar Academic Graph}
+\newacronym{orkg}{ORKG}{Open Research Knowledge Graph}
+\newacronym{foaf}{FOAF}{Friend of a Friend}
+\newacronym{doi}{DOI}{Digital Object Identifier}
+\newacronym{orcid}{ORCID}{Open Researcher and Contributor ID}
+\newacronym{viaf}{VIAF}{Virtual International Authority File}
+\newacronym{cbf}{CBF}{Content-Based Filtering}
+\newacronym{cf}{CF}{Collaborative Filtering}
+\newacronym{gbc}{GBC}{Gradient Boosted Classifier}
+\newacronym{auc}{AUC}{Area Under the Curve}
+\newacronym{rag}{RAG}{Retrieval-Augmented Generation}
+\newacronym{map}{MAP}{Mean Average Precision}
+\newacronym{mrr}{MRR}{Mean Reciprocal Rank}
+\newacronym{ndcg}{NDCG}{Normalized Discounted Cumulative Gain}
+\newacronym{rrmf}{RRMF}{Research Paper Recommendation System Integrating Multiple Features}
+\newacronym{mae}{MAE}{Mean Absolute Error}
+\newacronym{rmse}{RMSE}{Root Mean Squared Error}
+\newacronym{ramo}{RAMO}{Retrieval-Augmented Generation for MOOCs}
+\newacronym{dsr}{DSR}{Design Science Research}
+\newacronym{cordis}{CORDIS}{Community Research and Development Information Service}
+\newacronym{fp7}{FP7}{Seventh Framework Programme}
+\newacronym{h2020}{H2020}{Horizon 2020}
+\newacronym{eurio}{EURIO}{EUropean Research Information Ontology}
+\newacronym{dc}{DC}{Dublin Core}
+\newacronym{skos}{SKOS}{Simple Knowledge Organization System}
+\newacronym{nt}{NT}{N-Triples}
+\newacronym{ttl}{TTL}{Turtle}
+\newacronym{nq}{NQ}{N-Quads}
+\newacronym{jsonld}{JSON-LD}{JavaScript Object Notation for Linked Data}
+\newacronym{csv}{CSV}{Comma-Separated Values}
+\newacronym{xlsx}{XLSX}{Microsoft Excel Open XML Spreadsheet}
+\newacronym{dcat}{DCAT}{Data Catalog Vocabulary}
+\newacronym{dingo}{DINGO}{Data Integration for Grant Ontology}
+\newacronym{fabio}{FaBiO}{FRBR-aligned Bibliographic Ontology}
+\newacronym{frapo}{FRAPO}{Funding, Research Administration and Projects Ontology}
+\newacronym{dpr}{DPR}{Dense Passage Retrieval}
+\newacronym{bim}{BIM}{Building Information Modeling}
+\newacronym{lr}{LR}{Literature Requirement}
+\newacronym{appr}{APR}{Application Requirement}
+\newacronym{ar}{AR}{Answer Relevancy}
+\newacronym{cp}{CP}{Context Precision}
+\newacronym{cr}{CR}{Context Recall}
+\newacronym{cer}{CER}{Context Entity Recall}
+\newacronym{ss}{SS}{Answer Semantic Similarity}
+\newacronym{ac}{AC}{Answer Correctness}
+\newacronym{ragas}{RAGAs}{Retrieval-Augmented Generation Assessment}
+\newacronym{nan}{NaN}{Not a Number}
+
+
+% PDF meta-data
+\hypersetup{pdftitle={\thesisTitle}}
+\hypersetup{pdfsubject=\subjectName}
+\hypersetup{pdfauthor=\authorName}
+\hypersetup{pdfkeywords=\keywordNames}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\titlePage
+%\clearpage
+%\input{chapters/quotation.tex}
+%\clearpage
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+\pagenumbering{roman}
+%\input{chapters/Abstract}
+
+\clearpage % Start a new page
+%\input{chapters/Abstract-ita}
+
+\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	STATEMENT OF AUTHENTICITY
+%----------------------------------------------------------------------------------------
+
+\fillingPage{} 
+%\statementOfAuthenticity
+
+\clearpage
+
+\tableofcontents
+
+\fillingPage{} 
+\listOfFigures
+
+\fillingPage{} 
+\listOfTables
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\fillingPage{}
+\input{chapters/problemStatement.tex} 
+\fillingPage{}
+%\input{chapters/LiteratureReview}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\fillingPage{}
+\nocite{*}
+\listOfBibliography
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES (if appropriate)
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\fillingPage{} 
+%\input{appendices/ProjectParticipantsAgent}
+
+%----------------------------------------------------------------------------------------
+%	FOREWORD / ACKNOWLEDGEMENTS (optional)
+%----------------------------------------------------------------------------------------
+
+%\input{chapters/Acknowledgments}
+
+\clearpage % Start a new page
+
+\backmatter
+
+\end{document}  
