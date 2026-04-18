@@ -11,7 +11,7 @@
 % Further modified by www.latextemplates.com
 % Further modified by Michael Stauffer
 % Further modified by Maja Spahic
-% Further modified by Eduardo Tiano
+% Further modified by Eduardo Tiano (not so much)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
@@ -220,32 +220,23 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand*{\supervisor}[1]{\def\supName{#1}}
-\newcommand*{\supervisorURL}[1]{\def\supURL{#1}}
 \newcommand*{\supervisorTwo}[1]{\def\supTwoName{#1}}
-\newcommand*{\supervisorTwoURL}[1]{\def\supTwoURL{#1}}
 \newcommand*{\cosupervisor}[1]{\def\supcoName{#1}}
-\newcommand*{\cosupervisorURL}[1]{\def\supcoURL{#1}}
 \newcommand*{\thesisTitle}[1]{\def\thesisTitle{#1}}
 \newcommand*{\degree}[1]{\def\degreeName{#1}}
 \newcommand*{\degreeTwo}[1]{\def\degreeTwoName{#1}}
 \newcommand*{\authors}[1]{\def\authorName{#1}}
-\newcommand*{\authorsURL}[1]{\def\authorURL{#1}}
 \newcommand*{\addresses}[1]{\def\addressNames{#1}}
 \newcommand*{\subject}[1]{\def\subjectName{#1}}
 \newcommand*{\keywords}[1]{\def\keywordNames{#1}}
 \newcommand*{\university}[1]{\def\fhnw{#1}}
 \newcommand*{\universityUnicam}[1]{\def\unicam{#1}}
 \newcommand*{\UNIVERSITY}[1]{\def\FHNW{#1}}
-\newcommand*{\universityURL}[1]{\def\fhnwURL{#1}}
-\newcommand*{\universityUnicamURL}[1]{\def\unicamURL{#1}}
 \newcommand*{\faculty}[1]{\def\hsw{#1}}
 \newcommand*{\facultyUnicam}[1]{\def\hswUnicam{#1}}
 \newcommand*{\FACULTY}[1]{\def\HSW{#1}}
-\newcommand*{\facultyURL}[1]{\def\hswURL{#1}}
-\newcommand*{\facultyUnicamURL}[1]{\def\unicamURL{#1}}
 \newcommand*{\department}[1]{\def\iwi{#1}}
 \newcommand*{\DEPARTMENT}[1]{\def\IWI{#1}}
-\newcommand*{\departmentURL}[1]{\def\iwiURL{#1}}
 
 \newif\ifcosupervisor
 
@@ -253,44 +244,20 @@
 \def\matricola#1{\gdef\@thematricola{#1}}
 \def\academicyear#1{\gdef\@theacademicyear{#1}}
 \def\msc{Master of Science}
-%-------------------------------------------------  
-\universityURL{http://www.fhnw.ch}
-\universityUnicamURL{https://www.unicam.it/}
 %-------------------------------------------------      
-\university{\texorpdfstring{\href{http://www.fhnw.ch}
-                {University of Applied Sciences and Arts Northwestern Switzerland}}
-                {University of Applied Sciences and Arts Northwestern Switzerland}}
-\universityUnicam{\texorpdfstring{\href{https://www.unicam.it/}
-                {University of Camerino}}
-                {University of Camerino}}
+\university{{University of Applied Sciences and Arts Northwestern Switzerland}}
+\universityUnicam{{University of Camerino}}
 %-------------------------------------------------   
-\UNIVERSITY{\texorpdfstring{\href{https://www.unicam.it}
-                {UNIVERSITY OF APPLIED SCIENCES AND ARTS NORTHWESTERN SWITZERLAND}}
-                {UNIVERSITY OF APPLIED SCIENCES AND ARTS NORTHWESTERN SWITZERLAND}}
-%-------------------------------------------------   
-\facultyURL{http://www.fhnw.ch/business}
-\facultyUnicamURL{http://sst.unicam.it/}
+\UNIVERSITY{{UNIVERSITY OF APPLIED SCIENCES AND ARTS NORTHWESTERN SWITZERLAND}}
 %-------------------------------------------------                
-\faculty{\texorpdfstring{\href{http://www.fhnw.ch/business}
-                {School of Business}}
-                {School of Business}}
-\facultyUnicam{\texorpdfstring{\href{http://sst.unicam.it}
-                {School of  Science and Technologies}}
-                {School of  Science and Technologies}}
+\faculty{{School of Business}}
+\facultyUnicam{{School of  Science and Technologies}}
 %-------------------------------------------------                
-\FACULTY{\texorpdfstring{\href{http://www.fhnw.ch/business}
-                {SCHOOL OF BUSINESS}}
-                {SCHOOL OF BUSINESS}}
-%-------------------------------------------------   
-\departmentURL{http://www.fhnw.ch/business/iwi}  
+\FACULTY{{SCHOOL OF BUSINESS}}
 %-------------------------------------------------               
-\department{\texorpdfstring{\href{http://www.fhnw.ch/business/iwi}
-                {Institute for Information Systems}}
-                {Institute for Information Systems}}
+\department{{Institute for Information Systems}}
 %-------------------------------------------------                
-\DEPARTMENT{\texorpdfstring{\href{http://www.fhnw.ch/business/iwi}
-                {INSTITUTE FOR INFORMATION SYSTEMS}}
-                {INSTITUTE FOR INFORMATION SYSTEMS}}            
+\DEPARTMENT{{INSTITUTE FOR INFORMATION SYSTEMS}}            
 %----------------------------------------------------------------------------------------    
 
 %----------------------------------------------------------------------------------------
@@ -307,12 +274,12 @@
     \begin{figure}
         {\begin{minipage}[c]{.45\linewidth}
             \centering
-            \href{\unicamURL}{\includegraphics[width=\linewidth,keepaspectratio]{figures/logo/LogoUnicamPR.png}}
+            {\includegraphics[width=\linewidth,keepaspectratio]{figures/logo/LogoUnicamPR.png}}
         \end{minipage}
         \hspace{.09\linewidth}
         \begin{minipage}[c]{.45\linewidth}
             \centering
-            \href{\hswURL}{\includegraphics[width=\linewidth,keepaspectratio]{figures/logo/fhnwLogo.png}}
+            {\includegraphics[width=\linewidth,keepaspectratio]{figures/logo/fhnwLogo.png}}
         \end{minipage}
     \vspace{0.05cm}%
     \hrule%
@@ -378,14 +345,14 @@
     \begin{minipage}[b][3.8em][t]{0.4\textwidth}
     \begin{flushright} \large
     \emph{FHNW Supervisor} \\
-    \href{\supURL}{\bfseries \supName} \\
+    {\bfseries \supName} \\
     \vspace{0.3cm}
     \emph{Unicam Supervisor} \\
-    \href{\supTwoURL}{\bfseries \supTwoName} \\
+    {\bfseries \supTwoName} \\
     \ifcosupervisor
         \vspace{0.3cm}
         \emph{Co-supervisor} \\
-        \href{\supcoURL}{\bfseries \supcoName}
+        {\bfseries \supcoName}
     \fi 
     \vspace{0.3cm}
     \end{flushright}
