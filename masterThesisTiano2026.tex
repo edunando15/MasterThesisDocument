@@ -23,12 +23,13 @@
 
 % For digital publication it is recommended to use a one-sided layout
 \documentclass[11pt, oneside]{Thesis}
+
+\pgfplotsset{compat=1.18}
+
 \addbibresource{Bibliography.bib}
 
 % For printing it is recommended to use a two-sided layout
 %\documentclass[11pt, twoside]{Thesis}
-
-\makeglossaries
 
 \setlength{\epigraphwidth}{.7\textwidth}
 \renewcommand{\epigraphflush}{flushright}
@@ -104,20 +105,10 @@
 \supervisor{Emanuele Laurenzi}
 %-------------------------------------------------  
 
-% You supervisor's URL 
-% Citation command \supURL
-%-------------------------------------------------
-
 % You supervisor's name Unicam or FHNW
 % Citation command \supName 
 \supervisorTwo{Massimo Callisto De Donato}
-
 %-------------------------------------------------  
-
-% You supervisor's URL
-% Citation command \supURL
-%-------------------------------------------------
-
 
 % If you don't have a co-supervisor, exchange with
 %\cosupervisorfalse
@@ -128,10 +119,6 @@
 % Citation command \supcoName 
 \cosupervisor{Piermichele Rosati}
 %-------------------------------------------------  
-
-% You co-supervisor's URL
-% Citation command \supcoURL
-%-------------------------------------------------
 
 % Your degree name
 % Citation command \degreeName
@@ -144,62 +131,6 @@
 \authors{Eduardo Tiano}
 \matricola{129508 / 25-657-446}%
 \academicyear{2025/2026}%
-%-------------------------------------------------
-
-% Your URL
-% Citation command \authorURL
-%\authorsURL{http://www.johnsmith.com}
-%-------------------------------------------------
-
-% Your address (not used)
-% Citation command \addressNames
-\addresses{}
-%-------------------------------------------------
-
-% Your subject area (not used) 
-% Citation command \subjectName
-\subject{}
-%-------------------------------------------------   
-
-% Keywords for your thesis (not used)
-% Citation command \keywordNames 
-\keywords{}
-%-------------------------------------------------
-
-% http://www.fhnw.ch
-% Citation command \fhnwURL 
-%-------------------------------------------------
-
-% University of Applied Sciences and Arts Northwestern Switzerland
-% Citation command \fhnw 
-%-------------------------------------------------
-
-% UNIVERSITY OF APPLIED SCIENCES AND ARTS NORTHWESTERN SWITZERLAND
-% Citation command \FHNW 
-%-------------------------------------------------
-
-% http://www.fhnw.ch/business
-% Citation command \hswURL 
-%-------------------------------------------------
-
-% School of Business
-% Citation command \hsw 
-%-------------------------------------------------
-
-% SCHOOL OF BUSINESS
-% Citation command \HSW 
-%-------------------------------------------------
-
-% http://www.fhnw.ch/business/iwi
-% Citation command \iwiURL 
-%-------------------------------------------------
-
-% Institute for Information Systems
-% Citation command \iwi 
-%-------------------------------------------------
-
-% INSTITUTE FOR INFORMATION SYSTEMS for Information Systems
-% Citation command \IWI
 %-------------------------------------------------
 
 %----------------------------------------------------------------------------------------
@@ -236,99 +167,22 @@
 %   of the term or \glspl{term} for the plural form of the term.
 %----------------------------------------------------------------------------------------
 
-\newacronym{srq}{SRQ}{Sub Research Question}
-\newacronym{kg}{KG}{Knowledge Graph}
-\newacronym{ai}{AI}{Artifical Intelligence}
-\newacronym{llm}{LLM}{Large Language Model}
-\newacronym{dnn}{DNN}{Deep Neural Network}
-\newacronym{gnn}{GNN}{Graph Neural Network}
-\newacronym{ml}{ML}{Machine Learning}
-\newacronym{dl}{DL}{Deep Learning}
-\newacronym{cnn}{CNN}{Convolutional Neural Network}
-\newacronym{rnn}{RNN}{Recurrent Neural Network}
 \newacronym{rdf}{RDF}{Resource Description Framework}
 \newacronym{rdfs}{RDFS}{RDF Schema}
 \newacronym{uri}{URI}{Uniform Resource Identifier}
 \newacronym{owl}{OWL}{Web Ontology Language}
 \newacronym{sparql}{SPARQL}{SPARQL Protocol and RDF Query Language}
-\newacronym{nlp}{NLP}{Natural Language Processing}
-\newacronym{lod}{LOD}{Linked Open Data}
-\newacronym{kge}{KGE}{Knowledge Graph Embedding}
-\newacronym{gcn}{GCN}{Graph Convolutional Network}
-\newacronym{gat}{GAT}{Graph Attention Network}
-\newacronym{mpnn}{MPNN}{Message Passing Neural Network}
-\newacronym{graphsage}{GraphSAGE}{Graph Sample and Aggregation}
-\newacronym{stgnn}{STGNN}{Spatio-Temporal Graph Neural Network}
-\newacronym{tgn}{TGN}{Temporal Graph Networks}
-\newacronym{lstm}{LSTM}{Long Short-Term Memory}
-\newacronym{gru}{GRU}{Gated Recurrent Unit}
-\newacronym{grnn}{GRNN}{Graph Recurrent Neural Network}
-\newacronym{gae}{GAE}{Graph Autoencoder}
-\newacronym{rgcn}{R-GCN}{Relational Graph Convolutional Network}
-\newacronym{hran}{HRAN}{Heterogeneous Relation Attention Network}
-\newacronym{mugnn}{MuGNN}{Multi-channel Graph Neural Network}
-\newacronym{trar}{TRAR}{Target Relational Attention-Oriented Reasoning}
-\newacronym{dpmpn}{DPMPN}{Dynamic Pruned Message Passing Networks}
-\newacronym{hgcn}{H-GCN}{Hierarchical Graph Convolutional Network}
-\newacronym{hdgi}{HDGI}{Heterogeneous Deep Graph Infomax}
-\newacronym{han}{HAN}{Heterogeneous Graph Attention Networks}
-\newacronym{cv}{CV}{Computer Vision}
-\newacronym{w3c}{W3C}{World Wide Web Consortium}
-\newacronym{mag}{MAG}{Microsoft Academic Graph}
-\newacronym{s2ag}{S2AG}{Semantic Scholar Academic Graph}
-\newacronym{orkg}{ORKG}{Open Research Knowledge Graph}
-\newacronym{foaf}{FOAF}{Friend of a Friend}
-\newacronym{doi}{DOI}{Digital Object Identifier}
-\newacronym{orcid}{ORCID}{Open Researcher and Contributor ID}
-\newacronym{viaf}{VIAF}{Virtual International Authority File}
-\newacronym{cbf}{CBF}{Content-Based Filtering}
-\newacronym{cf}{CF}{Collaborative Filtering}
-\newacronym{gbc}{GBC}{Gradient Boosted Classifier}
-\newacronym{auc}{AUC}{Area Under the Curve}
-\newacronym{rag}{RAG}{Retrieval-Augmented Generation}
-\newacronym{map}{MAP}{Mean Average Precision}
-\newacronym{mrr}{MRR}{Mean Reciprocal Rank}
-\newacronym{ndcg}{NDCG}{Normalized Discounted Cumulative Gain}
-\newacronym{rrmf}{RRMF}{Research Paper Recommendation System Integrating Multiple Features}
-\newacronym{mae}{MAE}{Mean Absolute Error}
-\newacronym{rmse}{RMSE}{Root Mean Squared Error}
-\newacronym{ramo}{RAMO}{Retrieval-Augmented Generation for MOOCs}
-\newacronym{dsr}{DSR}{Design Science Research}
-\newacronym{cordis}{CORDIS}{Community Research and Development Information Service}
-\newacronym{fp7}{FP7}{Seventh Framework Programme}
-\newacronym{h2020}{H2020}{Horizon 2020}
-\newacronym{eurio}{EURIO}{EUropean Research Information Ontology}
-\newacronym{dc}{DC}{Dublin Core}
-\newacronym{skos}{SKOS}{Simple Knowledge Organization System}
 \newacronym{nt}{NT}{N-Triples}
 \newacronym{ttl}{TTL}{Turtle}
-\newacronym{nq}{NQ}{N-Quads}
 \newacronym{jsonld}{JSON-LD}{JavaScript Object Notation for Linked Data}
 \newacronym{csv}{CSV}{Comma-Separated Values}
-\newacronym{xlsx}{XLSX}{Microsoft Excel Open XML Spreadsheet}
-\newacronym{dcat}{DCAT}{Data Catalog Vocabulary}
-\newacronym{dingo}{DINGO}{Data Integration for Grant Ontology}
-\newacronym{fabio}{FaBiO}{FRBR-aligned Bibliographic Ontology}
-\newacronym{frapo}{FRAPO}{Funding, Research Administration and Projects Ontology}
-\newacronym{dpr}{DPR}{Dense Passage Retrieval}
 \newacronym{bim}{BIM}{Building Information Modeling}
-\newacronym{lr}{LR}{Literature Requirement}
-\newacronym{appr}{APR}{Application Requirement}
-\newacronym{ar}{AR}{Answer Relevancy}
-\newacronym{cp}{CP}{Context Precision}
-\newacronym{cr}{CR}{Context Recall}
-\newacronym{cer}{CER}{Context Entity Recall}
 \newacronym{ss}{SS}{Answer Semantic Similarity}
-\newacronym{ac}{AC}{Answer Correctness}
-\newacronym{ragas}{RAGAs}{Retrieval-Augmented Generation Assessment}
 \newacronym{nan}{NaN}{Not a Number}
-
 
 % PDF meta-data
 \hypersetup{pdftitle={\thesisTitle}}
-\hypersetup{pdfsubject=\subjectName}
 \hypersetup{pdfauthor=\authorName}
-\hypersetup{pdfkeywords=\keywordNames}
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 

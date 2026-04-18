@@ -194,8 +194,6 @@
     \fancyfoot{} % clear all footer fields
 \else
     \fancyhead{} % clear all header fields
-    \fancyhead[RE,RO]{\thepage}
-    \fancyhead[LE,LO]{\nouppercase{\leftmark}}
     \fancyfoot{} % clear all footer fields
 \fi
 
