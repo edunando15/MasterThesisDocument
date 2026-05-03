@@ -518,6 +518,7 @@
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY PAGE DESIGN
 %----------------------------------------------------------------------------------------
+\usepackage{xurl}
 \newcommand\listOfBibliography{
     \cleardoublepage
     \phantomsection
